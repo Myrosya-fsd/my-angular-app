@@ -1,0 +1,67 @@
+p {
+  color: brown;
+}
+
+div {
+  display: flex;
+  flex-direction: column; /* щоб елементи розташовувалися зверху вниз */
+  align-items: center; /* центрування по горизонталі */
+  justify-content: center; /* центрування по вертикалі */
+  text-align: center; /* щоб текст також був по центру */
+  background-color: rgb(227, 202, 170);
+  height: 100vh;
+}
+
+button {
+  display: inline-block;
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 10px;
+  background-color: rgb(59, 59, 184);
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: rgb(104, 104, 182);
+}
+
+button:disabled {
+  background-color: #ccc;
+  color: #999;
+  cursor: not-allowed;
+}
+
+.active {
+  background-color: #007bff;
+}
+
+.disabled {
+  background-color: #f0f0f0;
+  color: #999;
+  cursor: not-allowed;
+}
+
+.event-example {
+  width: 200px;
+  height: 100px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  text-align: center;
+  line-height: 100px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.clicked {
+  background-color: #007bff;
+  color: #ffffff;
+}
+
+.example {
+  margin-bottom: 10px;
+}

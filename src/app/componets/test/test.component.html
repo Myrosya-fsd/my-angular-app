@@ -1,0 +1,30 @@
+<div>
+  <p>Test component</p>
+  <p>{{ title }}</p>
+  <p>{{ getFullName() }}</p>
+
+  <button [disabled]="!isEnabled">click me</button>
+
+  <p [ngStyle]="{ color: 'red' }">тут використано ngStyle</p>
+
+  <p [ngClass]="{ active: isActive, disabled: isDisabled }">
+    тут використано ngClass
+  </p>
+
+  <div class="event-example" [ngClass]="{ clicked: isClikedState }"></div>
+
+  <button class="example" (click)="toggleState()">Перемикни стейт</button>
+
+  <input type="text" [(ngModel)]="inputText" />
+  <p>{{ inputText }}</p>
+
+  <!-------------------------->
+
+  <p>{{ childMessage }}</p>
+
+  <!------------------->
+
+  <button (click)="SendMessageToParent()">
+    надішли листа батьківському компоненту
+  </button>
+</div>
