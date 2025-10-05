@@ -27,4 +27,33 @@
   <button (click)="SendMessageToParent()">
     надішли листа батьківському компоненту
   </button>
+
+  <!---------------деректива--------------->
+
+  <p appHighlight [highlightColor]="'blue'">
+    Навідіть курсор, щоб побачити ефект!
+  </p>
 </div>
+<!---------------------------------->
+<ul>
+  <li *ngFor="let user of users; index as i">{{ i + 1 }}: {{ user }}</li>
+</ul>
+
+<!------------------------------------->
+
+@if(isClikedState) {
+<p>кнопка була натиснута</p>
+} @else {
+<p>кнопка ще не була натиснута</p>
+<button (click)="toggleState()">Перемикни стейт</button>
+}
+
+<!------------------------------>
+
+<ul>
+  @for (item of items; track item.id; let idx = $index, e = $even) {
+  <li>Фрукт № {{ idx + 1 }} : {{ item.name }}</li>
+  } @empty {
+  <li>There are no items</li>
+  }
+</ul>
