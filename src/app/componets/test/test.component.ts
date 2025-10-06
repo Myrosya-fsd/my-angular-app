@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HighlightDirective } from '../../derective/hihlight.directive';
+import { TodoService } from '../../services/todo.service';
 
 @Component({
   selector: 'app-test',
@@ -53,4 +54,31 @@ export class TestComponent {
     { id: 2, name: 'Банан' },
     { id: 3, name: 'Апельсин' },
   ];
+
+  //--------------- сервіс
+
+  newTask: string = '';
+  tasks: string[] = [];
+
+  constructor(private todoService: TodoService) {}
+
+  ngOnInit() {
+    this.tasks = this.todoService.getTasks();
+  }
+  addTask() {
+    if (this.newTask.trim() !== '') {
+      this.todoService.addTask(this.newTask.trim());
+      this.newTask = ''; //reset input field
+      this.updateTasks();
+    }
+  }
+
+  updateTasks() {
+    this.tasks = this.todoService.getTasks();
+  }
+
+  removeTask(index: number) {
+    this.todoService.removeTask(index);
+    this.updateTasks();
+  }
 }
